@@ -1,0 +1,29 @@
+.grid{                                                  /* linked to the grid id in the main html */
+    display: flex;
+    flex-wrap: wrap;                                    /* works with our plan to push the various "enemy" objects into rows that get pushed down - instead of having to make a large section with columns and grids, we just have one large line that gets wrapped based
+                                                            on our width/height */
+    border: solid 1px;
+    width: 300px;                                       /* needs to be divisible by the number of columns we're aiming for - in our case because our grid is 15*15, we need to be able to divide both our width and height by 15 */
+    height: 300px;
+}
+
+.grid div {                                             /* linked to all the <div> components within the grid id, but not any others */
+    width: 20px;                                        /* this is out grid width/column count (300/15), means that after 15 objects, the line is then wrapped over itself into a new one thanks to the flex wrap */
+    height: 20px;
+}
+
+.pdc {
+    background-color: blue;
+}
+.torp {
+    background-color: purple;
+    border-radius: 10px;
+}
+
+.boom {
+    background-color: red;
+}
+
+.burst {
+    background-color: yellow;
+}
