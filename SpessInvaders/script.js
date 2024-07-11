@@ -11,9 +11,12 @@ restartButton.style.display = 'none';
 const d1=document.getElementById('startDiscussion');
 const d2=document.getElementById('round1Discussion');
 const d3=document.getElementById('finaDiscussion');
+const vicMessage=document.getElementById('gameOverMessage');
+vicMessage.style.display = 'none';
 
 d2.style.display = 'none';
 d3.style.display = 'none';
+
 
 function game(){
         startButton.style.display = 'none';                                                                         //THIS FINALLY FIXED IT
@@ -92,7 +95,7 @@ function game(){
 
                                                                                                                     //adding logic for a game over state
                 if(squares[currentShooterIndex].classList.contains('invader', 'shooter')) {
-                    alert('Game Over, your score was ' + result)
+                    
                     squares[currentShooterIndex].classList.add('boom')
                     clearInterval(invaderId)
                     d2.style.display = 'block';
@@ -100,14 +103,15 @@ function game(){
                                                                                                                     // Show and enable the start button - swap to entirely new button in order to facilitate the resetgame function?
                     restartButton.style.display = 'block';
                     restartButton.disabled = false;
-                        restartButton.addEventListener('click', resetGame)                                            // resets the game state using the resetgame function
-                            alienInvadersTakenDown = []
+                        restartButton.addEventListener('click', resetGame)                                          // resets the game state using the resetgame function
+                            alienInvadersTakenDown = []                                                                                                                                 
+                                vicMessage.innerText = 'Dang, that one flew right into you'   
+                                vicMessage.style.display = 'block'     
                 }
 
                 for (let i = 0; i <= alienInvaders.length -1; i++) {                                                //setting up so if any of the invaders are in the last 15 squares of the grid, the game is over - could set this up so it's if an invader comes into contact?
-                    if(alienInvaders[i] > (squares.length - (width-1))) {
-                        alert('Game Over, your score was ' + result)
-                        clearInterval(invaderId)
+                    if(alienInvaders[i] > (squares.length - (width-1))) {                                           // the 'game over' squares at the bottom on the screen 
+                            clearInterval(invaderId)
                             d2.style.display = 'block';
                             d1.style.display = 'none';
                                                                                                                     // Show and enable the start button
@@ -115,12 +119,13 @@ function game(){
                         restartButton.disabled = false;
                             restartButton.addEventListener('click', resetGame)
                                 alienInvadersTakenDown = []
+                                    vicMessage.innerText = 'Ouch, looks like they got through'
+                                    vicMessage.style.display = 'block'     
                     }
                 }     
                 
                                                                                                                     //adding logic for a win state
                 if(alienInvadersTakenDown.length === alienInvaders.length) {                                        // win state is simple - if the "taken down" array is the same as the length of the alieninvaders array itself, then you win
-                    alert('Victory')
                     clearInterval(invaderId)
                         d3.style.display = 'block';
                         d1.style.display = 'none';
@@ -131,10 +136,12 @@ function game(){
                     restartButton.disabled = false;
                         restartButton.addEventListener('click', resetGame)
                             alienInvadersTakenDown = []
+                                vicMessage.innerText = 'Congrats! You cleared this wave. Continue?'
+                                vicMessage.style.display = 'block'     
                 }
 
             }
-            invaderId = setInterval(moveInvaders, 100)                                                             // consider an if statement for increasing speed - if invaderstakendown < 5, 10, 15, etc. 
+            invaderId = setInterval(moveInvaders, 50)                                                             // consider an if statement for increasing speed - if invaderstakendown < 5, 10, 15, etc. 
 
             //adding shooting functionality through another e (event)
             function shoot(e) {
@@ -237,6 +244,6 @@ function game(){
                             restartButton.addEventListener('click', resetGame)
                                 alienInvadersTakenDown = []
                     }
-                    invaderId = setInterval(moveInvaders, 500)                                                             // Needs to be added back in here or the invaders don't start moving again once added back to the board
+                    invaderId = setInterval(moveInvaders, 800)                                                          // Needs to be added back in here or the invaders don't start moving again once added back to the board. Speed adjusted down 
                 }         
 }
