@@ -5,13 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/SpessInvaders/stylesheet.css">
     <script src="/SpessInvaders/script.js" defer></script>
-
+<!-- DO A FAVICON  -->
     <title>Space Invaders Test</title>
 </head>
 <body>
     <div id="container">
+        <video autoplay muted loop id="bg">
+            <source src="/SpessInvaders/Assets/bgvideo.mp4" type="video/mp4"> <!--  Free Stock video by <a target="_blank" href="http://videezy.com">Videezy.com</a> -->
+        </video>
         <div id="outerbox">
-            <div id="gameOverMessage"><h2></h2></div>
+            <div id="gameOverMessage"><h2>Spacebar to shoot!</h2></div>
+            <div id="la">Left Arrow to move Left</div>
+            <div id="ra">Right Arrow to move Right</div>
             <div id="gameBox">
                     <h3>Score: <span id="result"></span></h3>       <!-- setting a score to appear at the top of the "game" -->
                 <button id="start">Start Game!</button>
@@ -248,8 +253,9 @@
         </div>
         <div id="discussion">
             <div id="startDiscussion"> One of the main things to know about me is that I'm autistic, among other things. Autism is a spectrum, meaning each individual is different. In my case, I can be overwhelmed by things happening too quickly, not having time to process new information. It also means I miss social cues others might find obvious, such as when something is said as a joke, or even something simple like when I've said enough about a particular subject. Another interesting aspect is hyperfixation. This is when you focus intently on a specific subject matter, project, etc. often to the detriment of other aspects. This does sometimes result in good creative output however. 
-                <p>So this project is very loosely based on a favourite IP of mine called "The Expanse", a science fiction show with a relatively realistic take on space travel, among other things. A key aspect of The Expanse is the manner in which spacecraft engage each other in combat. Ships will fire missiles/torpedoes at great ranges, the only protection against which comes in the form of point defences. Thus, we have a very "interpretive" version of Space Invaders, though in this you're protecting your ship from a swarm of incoming missiles.</p>
-                <p>This will only work with a keyboard I'm afraid. Left arrow key moves you left, right arrow key moves you right. Space Bar is your fire button. There's no cooldown on firing, so really spam as much as you can, your ship's survival depends on it!</p> </div> <!-- Give game instructions, info on what it's based on, explain how it's relevant to you -->
+                <p>So this project is very loosely based on a favourite IP of mine called "The Expanse", a science fiction show with a relatively realistic take on space travel among other things. A key aspect of The Expanse is the manner in which spacecraft engage each other in combat. Ships will fire missiles/torpedoes at great ranges, the only protection against which comes in the form of point defences. Thus, we have a very "interpretive" version of Space Invaders, though in this you're protecting your ship from a swarm of incoming missiles.</p>
+                <p>This will only work with a keyboard I'm afraid. Left arrow key moves you left, right arrow key moves you right. Space Bar is your fire button. There's no cooldown on firing, so really spam as much as you can, your ship's survival depends on it!</p> 
+            </div> <!-- Give game instructions, info on what it's based on, explain how it's relevant to you -->
             <div id="round1Discussion"> Ouch! Wow they really came at you quick didn't they? Almost unfairly quick one might say. Don't worry, this isn't me forgetting to add a 0.  
                 <p>So here's the thing. This isn't just a little Space Invaders clone. I wanted to give you a very rough glimpse into how I experience some things. That rush of confusion as the game didn't start like you thought it would, followed by panic as you realise you are rapidly running out of time, and lastly annoyance at how unfair that felt? A lot of people in my position experience the same every time we try something new that isn't prepared with our situation in mind.</p>
                 <p>You now know what to expect, I reckon you'll be able to get further this time. Click the "retry" button to give it another go. Remember: left arrow key to move left, right arrow key to move right, space bar to shoot.</p>
@@ -257,9 +263,11 @@
             <div id="finaDiscussion"> Woah, that was weird, everything seemed slower that time? You were able to cope with what was coming at you and pulled off a win! Congrats! 
                 <p>Yeah, I'm not subtle. This is what it feels like when you know what to expect going in. It can still be tough, but knowing what you're up against lets you plan accordingly and gives you a much better chance of success. </p>
                 <p>If you are considering me for a position, please try to give me as much information about the location, expected interview questions/topics of discussion, any expectations of myself, and do let me know if I'm talking too much.</p>
-                <p>Well, that's my little lesson done, but the game is fully playable, so keep on going! See how high you can get your score!</p></div> <!-- this should show on victory -->
+                <p>Well, that's my little lesson done, but the game is fully playable, so keep on going! See how high you can get your score!</p>
+            </div> <!-- this should show on victory -->
         </div>
     </div>
+
 </body>
 
 </html>

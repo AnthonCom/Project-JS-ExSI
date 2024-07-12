@@ -1,25 +1,26 @@
+// FINAL DAY TO-DO
+// Adjust text so it scales to fill the box it's in? [DONE]
+// work to make the background and overall page design less barebones - styled fonts? Background image or just background colour [DONE]
 
-//MAJOR rework of code from previous version, to allow functionality for resetting the game whilst retaining the current scoreboard. Reverted to older placeholder
-//names for elements as pulling code across from testbed poses significantly less risk than renaming everything and risking missing something 
 
 const startButton=document.getElementById('start');
 startButton.addEventListener('click', game)                                                                         // click button to start game
-                                                                                                                    // add secondary button for the reset game function? 
+                                                                                                                    // add secondary button for the reset game function? [DONE]
 const restartButton=document.getElementById('restart');
-restartButton.style.display = 'none';
+restartButton.style.display = 'none';                                                                               // hide restart button until first round complete
 
 const d1=document.getElementById('startDiscussion');
 const d2=document.getElementById('round1Discussion');
 const d3=document.getElementById('finaDiscussion');
 const vicMessage=document.getElementById('gameOverMessage');
-vicMessage.style.display = 'none';
 
-d2.style.display = 'none';
+
+d2.style.display = 'none';                                                                                          // setting up discussion text to be hidden until necessary rounds completed
 d3.style.display = 'none';
 
 
 function game(){
-        startButton.style.display = 'none';                                                                         //THIS FINALLY FIXED IT
+        startButton.style.display = 'none';                                                                         //Need a way to hide this after game starts or spacebar still triggers - THIS FINALLY FIXED IT 
         startButton.disabled = true;                                                                                //Both functions work to hide and disable the button after it is clicked. 
 
             const squares = document.querySelectorAll('.grid div')                                                  // identifying all classes and ids we've built using query selectors. As there's more than one element that is considered a div within .grid, 
@@ -211,7 +212,6 @@ function game(){
                     
                                                                                                                         //adding logic for a game over state
                     if(squares[currentShooterIndex].classList.contains('invader', 'shooter')) {
-                        alert('Game Over, your score was ' + result)
                         squares[currentShooterIndex].classList.add('boom')
                         clearInterval(invaderId)
 
@@ -224,7 +224,6 @@ function game(){
 
                     for (let i = 0; i <= alienInvaders.length -1; i++) {                                                //setting up so if any of the invaders are in the last 15 squares of the grid, the game is over - could set this up so it's if an invader comes into contact?
                         if(alienInvaders[i] > (squares.length - (width-1))) {
-                            alert('Game Over, your score was ' + result)
                             clearInterval(invaderId)
                                                                                                                         // Show and enable the start button
                             restartButton.style.display = 'block';
@@ -236,7 +235,6 @@ function game(){
                     
                                                                                                                         //adding logic for a win state
                     if(alienInvadersTakenDown.length === alienInvaders.length) {
-                        alert('Victory')
                         clearInterval(invaderId)
                                                                                                                         // Show and enable the start button
                         restartButton.style.display = 'block';
