@@ -1,6 +1,6 @@
 // FINAL DAY TO-DO
 // Adjust text so it scales to fill the box it's in? [DONE]
-// work to make the background and overall page design less barebones - styled fonts? Background image or just background colour [DONE]
+// work to make the background and overall page design less barebones - styled fonts? Background image or just background colour? Background video? [DONE]
 
 
 const startButton=document.getElementById('start');

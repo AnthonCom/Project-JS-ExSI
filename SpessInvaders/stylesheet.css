@@ -90,24 +90,24 @@
 
 
 #startDiscussion{
-    
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center;
-    padding: 1em;
+    padding: 1em 0;
+    margin: 5px;
 }
 
 #round1Discussion{
-    
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center;
-    padding: 1em;
+    padding: 1em 0;
+    margin: 5px;
 }
 
 #finaDiscussion {
-    
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center;
-    padding: 1em;
+    padding: 1em 0;
+    margin: 5px;
 }
 
 #gameBox{
@@ -184,7 +184,7 @@ h3 {
     content:url(/SpessInvaders/Assets/pdcBullet.png)
 }
 
-/* will want to consider better background options, as well as potentially looking into audio/video playback for victory/initial etc. */
+/* will want to consider better background options, as well as potentially looking into audio/video playback for victory/initial etc. [background video & styling only] */
 
 @media (max-width: 900px) and (min-width:801px) { 
     #discussion {
